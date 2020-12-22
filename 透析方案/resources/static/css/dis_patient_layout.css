@@ -1,0 +1,235 @@
+/** 头部查询 **/
+.patient-layout-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background-color: #FFFFFF;
+}
+.patient-layout-header .layui-card-header {
+	height: auto;
+}
+
+/** 侧边栏 **/
+.patient-layout-side {
+	position: fixed;
+	top: 61px;
+	left: 10px;
+	width: 200px;
+	height: calc(100vh - 51px - 10px - 10px);
+	z-index: 998;
+	overflow-x: hidden;
+	float: left;
+	border: 1px solid rgba(171, 160, 148, 0.37);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+	background-color: #FFFFFF;
+}
+
+/** 侧边栏患者列表下拉按钮 **/
+.patient-layout-side .patient-list-dropdown {
+	width: 100%;
+	height: 45px;
+	font-size: 16px;
+	background-color: rgba(51, 171, 159, 1);
+}
+.patient-layout-side .patient-list-dropdown.opend i {
+	transform: rotate(180deg);
+	display: inline-block;
+}
+
+/** 侧边栏患者列表固定按钮 **/
+.patient-layout-side .patient-list-fixed {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(51, 171, 159, 1);
+}
+
+/** 侧边栏菜单 **/
+.patient-layout-side-menu {
+	width: 200px;
+	height: calc(100% - 45px);
+}
+.patient-layout-side-menu .layui-nav-tree {
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.patient-layout-side-menu .layui-nav-item {
+	background-color: #FFFFFF;
+	line-height: 40px;
+}
+.patient-layout-side-menu .layui-nav-item > a {
+	background-color: #FFFFFF !important;
+	color: rgb(84, 101, 114) !important;
+	border-bottom: 2px solid rgba(249, 249, 249, 1);
+	height: 40px;
+	line-height: 40px;
+}
+.patient-layout-side-menu .layui-nav-item > a:hover {
+	background-color: rgba(229, 241, 241, 0.5) !important;
+}
+.patient-layout-side-menu .layui-nav-item.selected > a {
+	color: rgb(114, 192, 187) !important;
+}
+.patient-layout-side-menu .layui-nav-itemed > a .layui-nav-more {
+	border-color: transparent transparent rgb(84, 101, 114);
+}
+.patient-layout-side-menu .layui-nav-child {
+	background-color: #FFFFFF !important;
+}
+.patient-layout-side-menu .layui-nav-child > dd {
+	margin: 0;
+	padding: 0;
+}
+.patient-layout-side-menu .layui-nav-child > dd > a {
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid rgba(249, 249, 249, 1);
+	background-color: #FFFFFF;
+	padding: 0 30px;
+}
+.patient-layout-side-menu .layui-nav-child > dd > a:hover {
+	background-color: rgba(229, 241, 241, 0.5) !important;
+}
+.patient-layout-side-menu .layui-nav-child > dd > a .layui-badge-dot {
+	top: inherit;
+	margin-top: 0;
+	width: 5px;
+	height: 5px;
+	background-color: rgb(84, 101, 114);
+}
+.patient-layout-side-menu .layui-nav-child > dd > a cite {
+	font-size: 14px;
+	margin-left: 20px;
+	color: rgb(84, 101, 114)
+}
+.patient-layout-side-menu .layui-nav-child > dd > a.selected .layui-badge-dot {
+	background-color: rgb(114, 192, 187);
+}
+.patient-layout-side-menu .layui-nav-child > dd > a.selected cite {
+	color: rgb(114, 192, 187);
+}
+
+/** 侧边栏患者列表 **/
+.patient-layout-side-list {
+	width: 200px;
+	height: calc(100% - 45px);
+	background-color: #FFFFFF;
+	z-index: 997;
+	position: absolute;
+	top: 45px;
+	bottom: 0;
+	max-height: 500px;
+	display: none;
+}
+.patient-layout-side-list .patient-list-error {
+	text-align: center;
+	padding: 50px 10px;
+	color: #999;
+}
+.patient-layout-side-list .layui-side-scroll {
+	width: 100%;
+	height: calc(100% - 30px);
+}
+
+/** 患者管理主体内容 **/
+.patient-layui-body {
+	position: absolute;
+	top: calc(51px + 70px + 10px);
+	left: calc(200px + 10px);
+	width: calc(100% - 200px - 10px);
+	height: calc(100% - 61px -  70px - 5px);
+	float: left;
+}
+.patient-layui-body .layadmin-tabsbody-item {
+	height: 100%;
+}
+.patient-layui-body .layadmin-tabsbody-item iframe {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/** 患者下拉选项 **/
+.patient-dropdown-item {
+	padding: 10px 8px;
+	font-size: 14px;
+	border-bottom: 1px solid #e6e6e6;
+	cursor: pointer;
+}
+.patient-dropdown-item:hover {
+	background-color: rgba(229, 241, 241, 0.5);
+}
+.patient-dropdown-item.selected {
+	background-color: rgba(229, 241, 241, 1);
+}
+.patient-dropdown-item .patient-photo-box {
+	display: inline-block;
+	width: 45px;
+	vertical-align:middle
+}
+.patient-dropdown-item .patient-photo-box img {
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
+.patient-dropdown-item .patient-info-box {
+	display: inline-block;
+	width: 120px;
+	margin-left: 10px;
+	vertical-align:middle
+}
+.patient-info-row {
+	margin-top: 5px;
+}
+.patient-info-row:first-child {
+	margin-top: 0;
+}
+.patient-dropdown-item .patient-info-box label {
+	display: inline-block;
+	vertical-align: middle;
+}
+.patient-dropdown-item .patient-info-box .patient-name {
+	width: 64px;
+	text-align: left;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.patient-dropdown-item .patient-info-box .patient-record-no {
+	width: 80px;
+}
+.patient-dropdown-item .patient-info-box .patient-age {
+	width: 40px;
+	text-align: right;
+}
+.patient-dropdown-item .patient-info-box .patient-sex {
+	width: 16px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.patient-dropdown-item .patient-info-box .infection-status {
+	color: #FFFFFF;
+	background-color: #FFB800;
+	border-radius: 50px;
+	padding: 0 6px;
+	text-align: right;
+}
+
+
+/** 患者概览信息 **/
+.patient-brief-info {
+	position: fixed;
+	top: 61px;
+	left: 220px;
+	right: 10px;
+	z-index: 998;
+}
+
+/** 患者功能页面Iframe **/
+#patientAppBodyIframe {
+	width: 100%;
+	border: none;
+}

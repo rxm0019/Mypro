@@ -1,0 +1,181 @@
+.title-month {
+	text-align: center;
+	border-bottom: 1px solid #f6f6f6;
+	padding: 15px 0px;
+	font-size: 22px;
+	font-weight: bold;
+}
+.title-month span{
+	padding: 0px 5px;
+}
+.title-month i{
+	font-size: 24px;
+}
+.day-div{
+	float: left;
+	text-align: justify;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: inherit;
+}
+.day-div div{
+	font-size: 18px;
+}
+.patient-div{
+	float: left;
+	text-align: justify;
+	display: flex;
+	align-items: center;
+	height: inherit;
+}
+.patient-div .layui-col-xs1{
+	height: inherit;
+}
+tbody tr{
+	height: 90px;
+}
+tr th{
+	text-align: center !important;
+	font-size: 18px !important;
+	font-weight: bold !important;
+}
+tr td{
+	padding: 0px !important;
+}
+.layui-table tbody tr:hover {
+	background-color: white;
+}
+
+.layui-table tbody tr:hover{
+	background-color: white !important;
+	color: #000000 !important;
+}
+.layui-table tbody td:hover{
+	cursor: pointer;
+}
+.cur-day{
+	color: rgb(118, 192, 187);
+	font-size: 22px !important;
+}
+.layui-badge{
+	float: left;
+	border-radius: 50px;
+	height: auto;
+	line-height: inherit;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	background-color: #FF8722;
+}
+.morning{
+	background-color: #C6E4EE;
+}
+.afternoon{
+	background-color: #FAEF71;
+}
+.night{
+	background-color: #E4C2D2;
+}
+
+
+
+/* 患者列表控件 */
+.patient-body {
+	position: absolute;
+	left: calc(250px + 20px);
+	width: calc(100% - 280px);
+	float: left;
+	height: calc(100vh - 15px - 10px);
+}
+
+.patient-search-layout {
+	position: fixed;
+	left: 10px;
+	width: 250px;
+	height: calc(100vh - 25px);
+	z-index: 998;
+	overflow-x: hidden;
+	float: left;
+	border: 1px solid rgba(171, 160, 148, 0.37);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+.patient-search-layout .patient-list-error {
+	text-align: center;
+	padding: 50px 10px;
+	color: #999;
+}
+.patient-search-layout .layui-side-scroll {
+	width: 100%;
+	height: calc(100vh - 120px);
+}
+
+/** 患者下拉选项 **/
+.patient-search-dropdown-item {
+	display: flex;
+	display: -webkit-flex;
+	font-size: 14px;
+	line-height: 20px;
+	border-bottom: 1px solid #e6e6e6;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+.patient-search-dropdown-item:hover {
+	background-color: rgba(229, 241, 241, 0.5);
+}
+.patient-search-dropdown-item.selected {
+	background-color: rgba(229, 241, 241, 1);
+}
+.patient-search-dropdown-item .left-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width:30%;
+}
+.patient-search-dropdown-item .left-wrapper > img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.patient-search-dropdown-item .right-wrapper {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.patient-search-dropdown-item .right-wrapper > div {
+	width: 100%;
+	height: 50%;
+}
+.patient-search-dropdown-item .right-wrapper .one-item {
+	display: flex;
+	flex: 1;
+	align-items: center;
+}
+.patient-search-dropdown-item .right-wrapper .two-item {
+	display: flex;
+	align-items: center;
+}
+.patient-search-dropdown-item .patient-age {
+	display: flex;
+	align-items: center
+}
+.patient-search-dropdown-item .patient-infection-status {
+	margin-left:3px;
+	height: 15px;
+	line-height: 16px;
+	padding: 0 6px;
+	font-size: 12px;
+}
+.title-header{
+	text-align: center;
+	padding: 5px 0px;
+}
+.title-header-line{
+	margin: 5px 30%;
+	border-bottom: 4px solid #5FB878;
+}
+.title-header-input{
+	border-color: rgba(171, 160, 148, 0.37) !important;
+}

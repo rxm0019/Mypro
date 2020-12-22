@@ -1,0 +1,59 @@
+<#include "../base/common.ftl">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<!--layuiadmin的css-->
+<link rel="stylesheet" type="text/css" href="${ctxsta}/static/layuiadmin/style/admin.css" media="all">
+<body ms-controller="purSalesPriceList">
+<style>
+    .layui-form-label {
+        white-space: nowrap;
+        width: 110px;
+    }
+    .layui-input-inline{
+        width: 170px !important;
+    }
+    .layui-input-block{
+        margin-bottom: 5px;
+        display: inline-block;
+        margin-left: 0;
+        width: auto;
+        min-height: 30px;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <!--搜素栏的div-->
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto search-form"
+             id="purSalesPriceList_search" lay-filter="purSalesPriceList_search">
+        </div>
+
+        <div class="layui-card-body">
+            <!--工具栏的按钮的div，注意：需要增加权限控制-->
+            <div style="padding: 10px;" id="purSalesPriceList_tool">
+                <button :visible="@baseFuncInfo.authorityTag('purSalesPriceList#import')"
+                        class="layui-btn layui-btn-dismain"  onclick="importExcel()">导入</button>
+                <button :visible="@baseFuncInfo.authorityTag('purSalesPriceList#export')"
+                        class="layui-btn layui-btn-dissub" onclick="exportExcel()">导出</button>
+            </div>
+            <!--table定义-->
+            <table id="purSalesPriceList_table" lay-filter="purSalesPriceList_table"></table>
+            <!--table的工具栏按钮定义，注意：需要增加权限控制-->
+            <script type="text/html" id="purSalesPriceList_bar">
+                {{#  if(baseFuncInfo.authorityTag('purSalesPrice#edit')){ }}
+                <a class="layui-btn layui-btn-xs layui-btn-dissmall layui-btn-dis-red" lay-event="edit">编辑</a>
+                {{#  } }}
+            </script>
+        </div>
+    </div>
+</div>
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="${ctxsta}/static/js/expense/purSalesPriceList.js?t=${currentTimeMillis}"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.origtek.oas.dialysis.dao.patient.ext.ExtPatPatientHistoryMapper">
+  <resultMap id="patPatientHistoryMap" type="com.origtek.oas.common.model.patient.ext.PatPatientHistoryList">
+    <!-- 关联表字段映射在这里配置,比如<result column="XXXX数据库别名" property="user.id 对象.字段名"/>-->
+  </resultMap>
+  <sql id="patPatientHistoryColumns">
+    pph_.patient_history_id
+    ,pph_.patient_id
+    ,pph_.customer_type
+    ,pph_.dialysis_total_frequency
+    ,pph_.dry_weight
+    ,pph_.dry_weight_adjust
+    ,pph_.additional_weight
+    ,pph_.infection_status
+    ,pph_.remarks
+    ,pph_.create_by_
+    ,pph_.create_time_
+    ,pph_.update_by_
+    ,pph_.update_time_
+    ,pph_.data_status
+    ,pph_.data_sync
+    ,pph_.hospital_no
+  </sql>
+  <select id="list" resultMap="patPatientHistoryMap">
+    SELECT
+    <include refid="patPatientHistoryColumns"/>
+    FROM pat_patient_history pph_
+    WHERE 1=1
+    <if test="updateTime_begin!= null">
+    AND pph_.update_time_ &gt;= #{updateTime_begin}
+    </if>
+    <if test="updateTime_end!= null">
+    AND pph_.update_time_ &lt;= #{updateTime_end}
+    </if>
+    <choose>
+      <when test="page!=null and page.orderBy!= null and page.orderBy!= ''">
+        ORDER BY ${page.orderBy}
+      </when>
+    </choose>
+  </select>
+</mapper>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongster.dis.system.dialysis.ext.ExtDiaSummaryMapper">
+  <resultMap id="diaSummaryMap" type="com.hongster.dis.common.model.dialysis.ext.DiaSummaryList">
+    <!-- 关联表字段映射在这里配置,比如<result column="XXXX数据库别名" property="user.id 对象.字段名"/>-->
+  </resultMap>
+  <sql id="diaSummaryColumns">
+    ds_.summary_id
+    ,ds_.dia_record_id
+    ,ds_.after_plan_weight
+    ,ds_.after_real_weight
+    ,ds_.differ_weight
+    ,ds_.actual_dehydration
+    ,ds_.machine_dehydration
+    ,ds_.dialysis_time_hour
+    ,ds_.dialysis_time_min
+    ,ds_.systolic_pressure
+    ,ds_.diastolic_pressure
+    ,ds_.pulse
+    ,ds_.substitute_mode
+    ,ds_.replacement_fluid_total
+    ,ds_.rel_replacement_fluid_total
+    ,ds_.replacement_fluid_flow_rate
+    ,ds_.fall_assess
+    ,ds_.catheter_drop
+    ,ds_.dia_coagulation
+    ,ds_.dialyzer_change
+    ,ds_.blood_clotting
+    ,ds_.piping_change
+    ,ds_.fever
+    ,ds_.dialysate_intake_type
+    ,ds_.dialysate_intake
+    ,ds_.gait_watch
+    ,ds_.accompany_user
+    ,ds_.hemostasis
+    ,ds_.hemostasis_time
+    ,ds_.fistula_tremor
+    ,ds_.fistula_noise
+    ,ds_.fistula_other
+    ,ds_.dressing_change
+    ,ds_.measuring_part
+    ,ds_.sealing_method
+    ,ds_.capacity_a
+    ,ds_.capacity_v
+    ,ds_.drug_sealing
+    ,ds_.catheter_artery_side
+    ,ds_.catheter_vein_side
+    ,ds_.summary
+    ,ds_.washpipe_user
+    ,ds_.puncture_user
+    ,ds_.blood_receiver
+    ,ds_.rebleeding_user
+    ,ds_.inspector
+    ,ds_.principal_nurse
+    ,ds_.check_nurse
+    ,ds_.doctor_sign
+    ,ds_.save_status
+    ,ds_.create_by_
+    ,ds_.create_time_
+    ,ds_.update_by_
+    ,ds_.update_time_
+    ,ds_.data_status
+    ,ds_.data_sync
+    ,ds_.hospital_no
+  </sql>
+  <select id="list" resultMap="diaSummaryMap">
+    SELECT
+    <include refid="diaSummaryColumns"/>
+    FROM dia_summary ds_
+    WHERE 1=1
+    <if test="diaRecordId!= null and diaRecordId!=''">
+    AND ds_.dia_record_id = #{diaRecordId}
+    </if>
+    <if test="afterPlanWeight!= null and afterPlanWeight!=''">
+    AND ds_.after_plan_weight = #{afterPlanWeight}
+    </if>
+    <if test="afterRealWeight!= null and afterRealWeight!=''">
+    AND ds_.after_real_weight = #{afterRealWeight}
+    </if>
+    <if test="differWeight!= null and differWeight!=''">
+    AND ds_.differ_weight = #{differWeight}
+    </if>
+    <if test="actualDehydration!= null and actualDehydration!=''">
+    AND ds_.actual_dehydration = #{actualDehydration}
+    </if>
+    <if test="machineDehydration!= null and machineDehydration!=''">
+    AND ds_.machine_dehydration = #{machineDehydration}
+    </if>
+    <if test="dialysisTimeHour!= null and dialysisTimeHour!=''">
+    AND ds_.dialysis_time_hour = #{dialysisTimeHour}
+    </if>
+    <if test="dialysisTimeMin!= null and dialysisTimeMin!=''">
+    AND ds_.dialysis_time_min = #{dialysisTimeMin}
+    </if>
+    <if test="systolicPressure!= null and systolicPressure!=''">
+    AND ds_.systolic_pressure = #{systolicPressure}
+    </if>
+    <if test="diastolicPressure!= null and diastolicPressure!=''">
+    AND ds_.diastolic_pressure = #{diastolicPressure}
+    </if>
+    <if test="pulse!= null and pulse!=''">
+    AND ds_.pulse = #{pulse}
+    </if>
+    <if test="substituteMode!= null and substituteMode!=''">
+    AND ds_.substitute_mode = #{substituteMode}
+    </if>
+    <if test="replacementFluidTotal!= null and replacementFluidTotal!=''">
+    AND ds_.replacement_fluid_total = #{replacementFluidTotal}
+    </if>
+    <if test="relReplacementFluidTotal!= null and relReplacementFluidTotal!=''">
+    AND ds_.rel_replacement_fluid_total = #{relReplacementFluidTotal}
+    </if>
+    <if test="replacementFluidFlowRate!= null and replacementFluidFlowRate!=''">
+    AND ds_.replacement_fluid_flow_rate = #{replacementFluidFlowRate}
+    </if>
+    <if test="fallAssess!= null and fallAssess!=''">
+    AND ds_.fall_assess = #{fallAssess}
+    </if>
+    <if test="catheterDrop!= null and catheterDrop!=''">
+    AND ds_.catheter_drop = #{catheterDrop}
+    </if>
+    <if test="diaCoagulation!= null and diaCoagulation!=''">
+    AND ds_.dia_coagulation = #{diaCoagulation}
+    </if>
+    <if test="dialyzerChange!= null and dialyzerChange!=''">
+    AND ds_.dialyzer_change = #{dialyzerChange}
+    </if>
+    <if test="bloodClotting!= null and bloodClotting!=''">
+    AND ds_.blood_clotting = #{bloodClotting}
+    </if>
+    <if test="pipingChange!= null and pipingChange!=''">
+    AND ds_.piping_change = #{pipingChange}
+    </if>
+    <if test="fever!= null and fever!=''">
+    AND ds_.fever = #{fever}
+    </if>
+    <if test="dialysateIntakeType!= null and dialysateIntakeType!=''">
+    AND ds_.dialysate_intake_type = #{dialysateIntakeType}
+    </if>
+    <if test="dialysateIntake!= null and dialysateIntake!=''">
+    AND ds_.dialysate_intake = #{dialysateIntake}
+    </if>
+    <if test="gaitWatch!= null and gaitWatch!=''">
+    AND ds_.gait_watch = #{gaitWatch}
+    </if>
+    <if test="accompanyUser!= null and accompanyUser!=''">
+    AND ds_.accompany_user = #{accompanyUser}
+    </if>
+    <if test="hemostasis!= null and hemostasis!=''">
+    AND ds_.hemostasis = #{hemostasis}
+    </if>
+    <if test="hemostasisTime!= null and hemostasisTime!=''">
+    AND ds_.hemostasis_time = #{hemostasisTime}
+    </if>
+    <if test="fistulaTremor!= null and fistulaTremor!=''">
+    AND ds_.fistula_tremor = #{fistulaTremor}
+    </if>
+    <if test="fistulaNoise!= null and fistulaNoise!=''">
+    AND ds_.fistula_noise = #{fistulaNoise}
+    </if>
+    <if test="fistulaOther!= null and fistulaOther!=''">
+    AND ds_.fistula_other = #{fistulaOther}
+    </if>
+    <if test="dressingChange!= null and dressingChange!=''">
+    AND ds_.dressing_change = #{dressingChange}
+    </if>
+    <if test="measuringPart!= null and measuringPart!=''">
+    AND ds_.measuring_part = #{measuringPart}
+    </if>
+    <if test="sealingMethod!= null and sealingMethod!=''">
+    AND ds_.sealing_method = #{sealingMethod}
+    </if>
+    <if test="capacityA!= null and capacityA!=''">
+    AND ds_.capacity_a = #{capacityA}
+    </if>
+    <if test="capacityV!= null and capacityV!=''">
+    AND ds_.capacity_v = #{capacityV}
+    </if>
+    <if test="drugSealing!= null and drugSealing!=''">
+    AND ds_.drug_sealing = #{drugSealing}
+    </if>
+    <if test="catheterArterySide!= null and catheterArterySide!=''">
+    AND ds_.catheter_artery_side = #{catheterArterySide}
+    </if>
+    <if test="catheterVeinSide!= null and catheterVeinSide!=''">
+    AND ds_.catheter_vein_side = #{catheterVeinSide}
+    </if>
+    <if test="summary!= null and summary!=''">
+    AND ds_.summary = #{summary}
+    </if>
+    <if test="washpipeUser!= null and washpipeUser!=''">
+    AND ds_.washpipe_user = #{washpipeUser}
+    </if>
+    <if test="punctureUser!= null and punctureUser!=''">
+    AND ds_.puncture_user = #{punctureUser}
+    </if>
+    <if test="bloodReceiver!= null and bloodReceiver!=''">
+    AND ds_.blood_receiver = #{bloodReceiver}
+    </if>
+    <if test="rebleedingUser!= null and rebleedingUser!=''">
+    AND ds_.rebleeding_user = #{rebleedingUser}
+    </if>
+    <if test="inspector!= null and inspector!=''">
+    AND ds_.inspector = #{inspector}
+    </if>
+    <if test="principalNurse!= null and principalNurse!=''">
+    AND ds_.principal_nurse = #{principalNurse}
+    </if>
+    <if test="checkNurse!= null and checkNurse!=''">
+    AND ds_.check_nurse = #{checkNurse}
+    </if>
+    <if test="doctorSign!= null and doctorSign!=''">
+    AND ds_.doctor_sign = #{doctorSign}
+    </if>
+    <if test="saveStatus!= null and saveStatus!=''">
+    AND ds_.save_status = #{saveStatus}
+    </if>
+    <if test="createBy!= null and createBy!=''">
+    AND ds_.create_by_ = #{createBy}
+    </if>
+    <if test="createTime!= null">
+    AND ds_.create_time_ = #{createTime}
+    </if>
+    <if test="updateBy!= null and updateBy!=''">
+    AND ds_.update_by_ = #{updateBy}
+    </if>
+    <if test="updateTime!= null">
+    AND ds_.update_time_ = #{updateTime}
+    </if>
+    <if test="dataStatus!= null and dataStatus!=''">
+    AND ds_.data_status = #{dataStatus}
+    </if>
+    <if test="dataSync!= null and dataSync!=''">
+    AND ds_.data_sync = #{dataSync}
+    </if>
+    <if test="hospitalNo!= null and hospitalNo!=''">
+    AND ds_.hospital_no = #{hospitalNo}
+    </if>
+    <choose>
+      <when test="page!=null and page.orderBy!= null and page.orderBy!= ''">
+        ORDER BY ${page.orderBy}
+      </when>
+    </choose>
+  </select>
+</mapper>

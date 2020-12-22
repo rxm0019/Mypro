@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongster.dis.system.dao.ext.ExtSysHospitalMapper">
+  <resultMap id="sysHospitalMap" type="com.hongster.dis.common.model.system.ext.SysHospitalList">
+    <!-- 关联表字段映射在这里配置,比如<result column="XXXX数据库别名" property="user.id 对象.字段名"/>-->
+  </resultMap>
+  <sql id="sysHospitalColumns">
+    sh_.hospital_id
+    ,sh_.hospital_no
+    ,sh_.hospital_name
+    ,sh_.superior
+    ,sh_.tel
+    ,sh_.address
+    ,sh_.is_price
+    ,sh_.is_automatic
+    ,sh_.is_log
+    ,sh_.days
+    ,sh_.opening_date
+    ,sh_.accounts_name
+    ,sh_.appid
+    ,sh_.secret
+    ,sh_.token
+    ,sh_.aeskey
+    ,sh_.remark
+    ,sh_.create_by_
+    ,sh_.create_time_
+    ,sh_.update_by_
+    ,sh_.update_time_
+    ,sh_.data_status
+    ,sh_.data_sync
+  </sql>
+  <select id="list" resultMap="sysHospitalMap">
+    SELECT
+    <include refid="sysHospitalColumns"/>
+    FROM sys_hospital sh_
+    WHERE 1=1
+    <if test="hospitalId!= null and hospitalId!=''">
+    AND sh_.hospital_id = #{hospitalId}
+    </if>
+    <if test="hospitalNo!= null and hospitalNo!=''">
+    AND sh_.hospital_no = #{hospitalNo}
+    </if>
+    <if test="hospitalName!= null and hospitalName!=''">
+    AND sh_.hospital_name = #{hospitalName}
+    </if>
+    <if test="superior!= null and superior!=''">
+    AND sh_.superior = #{superior}
+    </if>
+    <if test="tel!= null and tel!=''">
+    AND sh_.tel = #{tel}
+    </if>
+    <if test="address!= null and address!=''">
+    AND sh_.address = #{address}
+    </if>
+    <if test="isPrice!= null and isPrice!=''">
+    AND sh_.is_price = #{isPrice}
+    </if>
+    <if test="isAutomatic!= null and isAutomatic!=''">
+    AND sh_.is_automatic = #{isAutomatic}
+    </if>
+    <if test="isLog!= null and isLog!=''">
+    AND sh_.is_log = #{isLog}
+    </if>
+    <if test="days!= null and days!=''">
+    AND sh_.days = #{days}
+    </if>
+    <if test="openingDate!= null">
+    AND sh_.opening_date = #{openingDate}
+    </if>
+    <if test="accountsName!= null and accountsName!=''">
+    AND sh_.accounts_name = #{accountsName}
+    </if>
+    <if test="appid!= null and appid!=''">
+    AND sh_.appid = #{appid}
+    </if>
+    <if test="secret!= null and secret!=''">
+    AND sh_.secret = #{secret}
+    </if>
+    <if test="token!= null and token!=''">
+    AND sh_.token = #{token}
+    </if>
+    <if test="aeskey!= null and aeskey!=''">
+    AND sh_.aeskey = #{aeskey}
+    </if>
+    <if test="remark!= null and remark!=''">
+    AND sh_.remark = #{remark}
+    </if>
+    <if test="createBy!= null and createBy!=''">
+    AND sh_.create_by_ = #{createBy}
+    </if>
+    <if test="createTime!= null">
+    AND sh_.create_time_ = #{createTime}
+    </if>
+    <if test="updateBy!= null and updateBy!=''">
+    AND sh_.update_by_ = #{updateBy}
+    </if>
+    <if test="updateTime!= null">
+    AND sh_.update_time_ = #{updateTime}
+    </if>
+    <if test="dataStatus!= null and dataStatus!=''">
+    AND sh_.data_status = #{dataStatus}
+    </if>
+    <if test="dataSync!= null and dataSync!=''">
+    AND sh_.data_sync = #{dataSync}
+    </if>
+    <choose>
+      <when test="page!=null and page.orderBy!= null and page.orderBy!= ''">
+        ORDER BY ${page.orderBy}
+      </when>
+    </choose>
+  </select>
+</mapper>

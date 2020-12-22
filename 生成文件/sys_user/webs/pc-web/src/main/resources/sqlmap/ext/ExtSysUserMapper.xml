@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongster.dis.system.dao.ext.ExtSysUserMapper">
+  <resultMap id="sysUserMap" type="com.hongster.dis.common.model.system.ext.SysUserList">
+    <!-- 关联表字段映射在这里配置,比如<result column="XXXX数据库别名" property="user.id 对象.字段名"/>-->
+  </resultMap>
+  <sql id="sysUserColumns">
+    su_.id
+    ,su_.login_id
+    ,su_.user_pwd
+    ,su_.user_name
+    ,su_.user_type
+    ,su_.sex
+    ,su_.email
+    ,su_.mobile
+    ,su_.title
+    ,su_.medical_user
+    ,su_.address
+    ,su_.openid
+    ,su_.create_by_
+    ,su_.create_time_
+    ,su_.update_by_
+    ,su_.update_time_
+    ,su_.data_status
+    ,su_.data_sync
+    ,su_.hospital_no
+  </sql>
+  <select id="list" resultMap="sysUserMap">
+    SELECT
+    <include refid="sysUserColumns"/>
+    FROM sys_user su_
+    WHERE 1=1
+    <if test="loginId!= null and loginId!=''">
+    AND su_.login_id = #{loginId}
+    </if>
+    <if test="userPwd!= null and userPwd!=''">
+    AND su_.user_pwd = #{userPwd}
+    </if>
+    <if test="userName!= null and userName!=''">
+    AND su_.user_name = #{userName}
+    </if>
+    <if test="userType!= null and userType!=''">
+    AND su_.user_type = #{userType}
+    </if>
+    <if test="sex!= null and sex!=''">
+    AND su_.sex = #{sex}
+    </if>
+    <if test="email!= null and email!=''">
+    AND su_.email = #{email}
+    </if>
+    <if test="mobile!= null and mobile!=''">
+    AND su_.mobile = #{mobile}
+    </if>
+    <if test="title!= null and title!=''">
+    AND su_.title = #{title}
+    </if>
+    <if test="medicalUser!= null and medicalUser!=''">
+    AND su_.medical_user = #{medicalUser}
+    </if>
+    <if test="address!= null and address!=''">
+    AND su_.address = #{address}
+    </if>
+    <if test="openid!= null and openid!=''">
+    AND su_.openid = #{openid}
+    </if>
+    <if test="createBy!= null and createBy!=''">
+    AND su_.create_by_ = #{createBy}
+    </if>
+    <if test="createTime!= null">
+    AND su_.create_time_ = #{createTime}
+    </if>
+    <if test="updateBy!= null and updateBy!=''">
+    AND su_.update_by_ = #{updateBy}
+    </if>
+    <if test="updateTime!= null">
+    AND su_.update_time_ = #{updateTime}
+    </if>
+    <if test="dataStatus!= null and dataStatus!=''">
+    AND su_.data_status = #{dataStatus}
+    </if>
+    <if test="dataSync!= null and dataSync!=''">
+    AND su_.data_sync = #{dataSync}
+    </if>
+    <if test="hospitalNo!= null and hospitalNo!=''">
+    AND su_.hospital_no = #{hospitalNo}
+    </if>
+    <choose>
+      <when test="page!=null and page.orderBy!= null and page.orderBy!= ''">
+        ORDER BY ${page.orderBy}
+      </when>
+    </choose>
+  </select>
+</mapper>

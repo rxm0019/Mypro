@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongster.dis.system.dao.ext.ExtSysDictMapper">
+  <resultMap id="sysDictMap" type="com.hongster.dis.common.model.system.ext.SysDictList">
+    <!-- 关联表字段映射在这里配置,比如<result column="XXXX数据库别名" property="user.id 对象.字段名"/>-->
+  </resultMap>
+  <sql id="sysDictColumns">
+    sd_.id
+    ,sd_.dict_name
+    ,sd_.dict_type
+    ,sd_.dict_system
+    ,sd_.dict_desc
+    ,sd_.create_by_
+    ,sd_.create_time_
+    ,sd_.update_by_
+    ,sd_.update_time_
+    ,sd_.data_status
+    ,sd_.data_sync
+    ,sd_.hospital_no
+  </sql>
+  <select id="list" resultMap="sysDictMap">
+    SELECT
+    <include refid="sysDictColumns"/>
+    FROM sys_dict sd_
+    WHERE 1=1
+    <if test="dictName!= null and dictName!=''">
+    AND sd_.dict_name = #{dictName}
+    </if>
+    <if test="dictType!= null and dictType!=''">
+    AND sd_.dict_type = #{dictType}
+    </if>
+    <if test="dictSystem!= null and dictSystem!=''">
+    AND sd_.dict_system = #{dictSystem}
+    </if>
+    <if test="dictDesc!= null and dictDesc!=''">
+    AND sd_.dict_desc = #{dictDesc}
+    </if>
+    <if test="createBy!= null and createBy!=''">
+    AND sd_.create_by_ = #{createBy}
+    </if>
+    <if test="createTime!= null">
+    AND sd_.create_time_ = #{createTime}
+    </if>
+    <if test="updateBy!= null and updateBy!=''">
+    AND sd_.update_by_ = #{updateBy}
+    </if>
+    <if test="updateTime!= null">
+    AND sd_.update_time_ = #{updateTime}
+    </if>
+    <if test="dataStatus!= null and dataStatus!=''">
+    AND sd_.data_status = #{dataStatus}
+    </if>
+    <if test="dataSync!= null and dataSync!=''">
+    AND sd_.data_sync = #{dataSync}
+    </if>
+    <if test="hospitalNo!= null and hospitalNo!=''">
+    AND sd_.hospital_no = #{hospitalNo}
+    </if>
+    <choose>
+      <when test="page!=null and page.orderBy!= null and page.orderBy!= ''">
+        ORDER BY ${page.orderBy}
+      </when>
+    </choose>
+  </select>
+</mapper>

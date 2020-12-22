@@ -1,0 +1,462 @@
+@charset "utf-8";
+/**
+    说明：此页面是项目需要的自定义样式，请小心添加
+    CSS写作注意事项：
+  1. 页面编码规范
+    1.1. 统一使用 UTF-8 编码,用@charset "utf-8"指定页面编码。
+    1.2. 全局字体设置：
+         windows 7系统：微软雅黑 Arial；
+         windows XP及以下：新宋体，宋体，Arial
+         MAC默认字体：Helvetica Neue和Helvetica Hiragino Sans GB。
+    1.3. 中文字体使用编码转换，请参阅下节“中文字体css编码转换”
+    1.4. 推荐使用216web安全色
+  2. 属性写在一行内，属性之间、属性名和值之间以及属性与“{}”之间应减少空格，去掉最后一个“;”，例如：.class{width:200px;height:100px}
+  3. 属性的书写顺序：
+    3.1. 按照元素模型由外及内，由整体到细节书写，大致分为五组：
+      位置：position,left,right,float
+      盒模型属性：display,margin,padding,width,height
+      边框与背景：border,background
+      段落与文本：line-height,text-indent,font,color,text-decoration,...
+      其他属性：overflow,cursor,visibility,...
+    3.2. 针对特殊浏览器的属性，应写在标准属性之前，例如：-webkit-box-shadow:;-moz-box-shadow:;box-shaow:;
+  4. 带有前缀的属性，单独一行，通过缩进，让每个属性的值垂直对齐，方便编辑维护。
+  5. 谨慎添加新的选择符规则，尤其不可滥用 id，尽可能继承和复用已有样式
+  6. 选择符、属性、值均用小写（格式的颜色值除外），缩写的选择符名称须说明缩写前的全称，例如 .cl -> Clearfix
+  7. 避免使用各种 CSS Hack，如需对 IE 进行特殊定义，请参阅下节“关于 CSS Hack 的说明”
+  8. 勿使用冗余低效的 CSS 写法，例如：ul li a span{... }
+  9. 慎用 !important
+  10. 建议使用具有语义化的classname或id
+  11.避免使用兼容性不好的使用滤镜
+  12.开发过程中的未定事项，须用 [!] 标出，以便于后续讨论整理。
+  13.注释格式，统一使用双斜杠加*。
+  14.上下模块之间的间距统一使用下一个模块的margin-top来实现，好处是：如果没有下一个模块也不会多出一段空隙。
+  15.hover，selected，disabled，current等具有特定意义的请勿直接占用。
+  16.:link :visited :hover :active书写顺序 L-V-H-A，速记：LoVe（喜欢）HAte（讨厌）。
+  17.不要使用 @import
+ */
+
+/*外边距
+	Name:			style_margin
+	Example:		class="mt-5|mt-10..."
+	Explain:		.mt表示上边距|.mb表示下边距|.ml表示左边距|.mr表示右边距
+*/
+/** logo */
+.layadmin-side-shrink .layui-layout-admin .layui-logo{
+    /*width: 53px !important;*/
+    /*background-image: url(../images/logo.png) !important;*/
+    /*background-size:34px 36px;*/
+}
+
+/*.layui-logo-span{*/
+/*    float: left;*/
+/*    margin-top: 5px;*/
+/*    width: 100px;*/
+/*    height: 40px;*/
+/*    background-image: url(../images/logo.png);*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: center center;*/
+/*}*/
+
+/*.layui-layout-admin .layui-logo{*/
+/*    text-align: left !important;*/
+/*}*/
+
+.mt-5{margin-top:5px}.mt-10{margin-top:10px}.mt-15{margin-top:15px}.mt-20{margin-top:20px}.mt-25{margin-top:25px}.mt-30{margin-top:30px}.mt-35{margin-top:35px}.mt-40{margin-top:40px}.mt-50{margin-top:50px}
+.mb-5{margin-bottom:5px}.mb-10{margin-bottom:10px}.mb-15{margin-bottom:15px}.mb-20{margin-bottom:20px}.mb-30{margin-bottom:30px}.mb-40{margin-bottom:40px}.mb-50{margin-bottom:50px}
+.ml-5{margin-left:5px}.ml-10{margin-left:10px}.ml-15{margin-left:15px}.ml-20{margin-left:20px}.ml-30{margin-left:30px}.ml-40{margin-left:40px}.ml-50{margin-left:50px}
+.mr-5{margin-right:5px}.mr-10{margin-right:10px}.mr-15{margin-right:15px}.mr-20{margin-right:20px}.mr-30{margin-right:30px}.mr-40{margin-right:40px}.mr-50{margin-right:50px}
+/*内填充
+	Name:			style_padding
+	Example:		class="pt-5|pt-10|……"
+	Explain:		.pt表示上填充|.pb表示下填充|.pl表示左填充|.pr表示右填充
+*/
+.pt-5{padding-top:5px}.pt-10{padding-top:10px}.pt-15{padding-top:15px}.pt-20{padding-top:20px}.pt-25{padding-top:25px}.pt-30{padding-top:30px}
+.pb-5{padding-bottom:5px}.pb-10{padding-bottom:10px}.pb-15{padding-bottom:15px}.pb-20{padding-bottom:20px}.pb-25{padding-bottom:25px}.pb-30{padding-bottom:30px}
+.pl-5{padding-left:5px}.pl-10{padding-left:10px}.pl-15{padding-left:15px}.pl-20{padding-left:20px}.pl-25{padding-left:25px}.pl-30{padding-left:30px}
+.pr-5{padding-right:5px}.pr-10{padding-right:10px}.pr-15{padding-right:15px}.pr-20{padding-right:20px}.pr-25{padding-right:25px}.pr-30{padding-right:30px}
+.pd-5{padding:5px}.pd-10{padding:10px}.pd-15{padding:15px}.pd-20{padding:20px}.pd-25{padding:25px}.pd-30{padding:30px}.pd-40{padding:40px}
+
+
+/*
+    自定义的列表页面上搜索条件用到
+	Name: .search-form
+	Example:
+	Explain:
+*/
+.search-form .condition-icon{
+    position: relative!important;
+    line-height: 15px !important;
+    right: -3px !important;
+    font-size: 10px;
+}
+@media screen and (max-width: 450px){
+    .search-form .layui-form-item .layui-inline{
+        width: 100% !important;
+    }
+}
+.search-form .layui-form-item .layui-inline .layui-form-checkbox[lay-skin=primary]{
+    margin-top: -6px;
+}
+.search-form .layui-form-item .layui-inline .layui-form-checkbox[lay-skin=primary] i{
+    /*right: 0px;*/
+    margin-top: -9px;
+}
+.search-form .layui-form-item .layui-inline .layui-form-radio{
+    margin-top: -6px;
+}
+.search-form .layui-form-item .layui-inline .layui-form-radio .layui-icon{
+    position:relative;
+    right: 0px;
+    margin-top: 0px;
+}
+
+/*
+    编辑页面样式
+	Name:	.edit-verify-span
+	Example:
+	Explain:
+*/
+.edit-verify-span{
+    color: red;
+}
+
+/*
+    左侧树样式
+	Name: .tree-side-div
+	Example:
+	Explain:
+*/
+.tree-side-div{
+    color: #666;
+    background-color: #FFFFFF;
+    z-index: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+/*树的名称*/
+.tree-side-div .tree-side-title{
+    position: fixed;
+    border-bottom: 1px solid #e8ebed;
+    line-height: 42px;
+    background-color: #ffffff;
+    font-size: 15px;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+    width: inherit;
+    height: 40px;
+    padding: 0 0 0 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-weight: 400;
+    color: #333;
+}
+.tree-side-div .tree-side-title .fly-search{
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+.fly-layer-search input {
+    height: 75px;
+    line-height: 75px;
+    width: 500px;
+    padding: 0 15px;
+    font-size: 20px;
+    border: none 0;
+    background: none;
+}
+.tree-side-div .tree-side-title .tree-side-hide{
+    float: right;
+    color: #666;
+    -webkit-transform: rotate(180deg);/*Safari 4+,Google Chrome 1+ */
+    -moz-transform: rotate(180deg);/*Firefox 3.5+*/
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);/*ie*/
+}
+/*树的搜索框*/
+.tree-side-div .tree-search{
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    margin: 0;
+    width: inherit;
+    background-color: #FFFFFF;
+}
+.tree-side-div + .layui-body{
+    -webkit-transition: all .3s;
+}
+
+
+.tree-side-div .tree-search input{
+    /*margin:5px 5px 5px 15px;*/
+    padding-left: 10px;
+    padding-right: 20px;
+    height: 38px;
+    line-height: 1.3;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    border-color: #e6e6e6;
+}
+/*树的样式*/
+.tree-side-div .layui-fluid{
+    -webkit-transition: all .3s;
+    margin: 0;
+    padding: 0 5px 5px 5px;
+}
+.tree-side-div .layui-fluid .layui-card{
+    box-shadow: 0 0 0 0 rgba(0,0,0,.05);
+    overflow-x:auto;
+    overflow-y:auto;
+    padding-bottom: 5px;
+}
+    /*隐藏左侧树*/
+.tree-hide-div{
+    width: 15px !important;
+    margin-left: 0px;
+    /*margin-bottom: 0px;*/
+}
+.tree-hide-div .tree-side-title{
+    left: 0;
+    padding: 0;
+}
+.tree-hide-div .tree-side-title .layui-icon{
+    float: right;
+    color: #666;
+    -webkit-transform: rotate(0deg);/*Safari 4+,Google Chrome 1+ */
+    -moz-transform: rotate(0deg);/*Firefox 3.5+*/
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);/*ie*/
+}
+.tree-hide-div + .layui-body{
+    left: 15px !important;
+}
+.tree-hide-div .tree-side-title span{
+    display: none;
+}
+.tree-hide-div .tree-search{
+    display: none;
+}
+.tree-hide-div .layui-fluid{
+    display: none;
+}
+
+/*文本查询框图标*/
+.icon-input-search{
+    padding-right: 30px;
+}
+.input-icon-right{
+    position: absolute;
+    top: 50%;
+    right: 7px !important;
+    margin-top: -7px;
+}
+
+.layui-upload-item.with-file {
+    margin-top: 10px;
+}
+.layui-upload-item.with-file a {
+    width: calc(100% - 40px);
+    display: inline-block;
+    color: rgb(118, 192, 187);
+    text-decoration: underline;
+}
+.layui-upload-item .icon-delete {
+    cursor: pointer;
+    position: absolute;
+    margin: 2px 0 0 24px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    font-size: 17px;
+    background-color: #FF5722;
+    color: #fff;
+}
+
+/** 图片上传预览 **/
+.layui-upload-item.with-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
+    display: inline-block;
+}
+.layui-upload-item.with-img img {
+    width: 100%;
+    height: 100%;
+}
+.layui-upload-item.with-img .icon-delete {
+    margin: -7px 0 0 -18px;
+}
+
+/*上传预览*/
+.layui-upload-img {
+    width: 92px;
+    height: 92px;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
+}
+.layui-upload-img img {
+    width: 100%;
+    height: 100%;
+}
+.layui-upload-close{
+    cursor: pointer;
+    position: absolute;
+    margin: -7px 0 0 -18px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    font-size: 17px;
+    background-color: #FF5722;
+    color: #fff;
+}
+
+
+/**扩展图标
+*/
+
+/*
+广播任务按钮
+*/
+.tadtaskbtn {
+    vertical-align: middle;
+    text-align: center;
+    height: 120px;
+    margin-top: 20px;
+    margin-left:0px;
+    margin-right: 20px
+}
+@media screen and(max-width:1500px) {
+    .tadtaskbtn{
+        width: available;
+        height: available;
+    }
+    .layui-card-body {
+        width: 80%;
+    }
+}
+/*
+主页功能跳转按钮
+*/
+.indexbtn {
+    vertical-align: middle;
+    text-align: center;
+    height: 150px;
+    margin-right: 50px;
+}
+@media (min-width:1000px) and (max-width:1600px){
+    .indexbtn {
+        vertical-align: middle;
+        text-align: center;
+        height:120px;
+        margin-right: 50px;
+    }
+}
+@media screen and (max-width:1000px){
+    .indexbtn {
+        vertical-align: middle;
+        text-align: center;
+        height:120px;
+        margin-right: 50px;
+        margin-bottom: 20px;
+    }
+}
+/*
+缩进2字符
+*/
+.indent{
+    text-indent: 2em;
+    height: 60px;
+}
+/*
+广播管理的"至"的间隔
+*/
+.broadand{
+    width: 30px;
+    margin:10px 10px 0px 0px;
+    height:28px;float: left;
+    vertical-align: middle;
+    text-align: center;
+}
+/*
+主页的数量链接到图表
+*/
+.toChart{
+    color:deepskyblue;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 5px;
+}
+/*
+主页功能跳转按钮的图片
+*/
+.indexbtnIcon{
+    width: 60%;
+    height:50%;
+    margin: auto;
+}
+@media screen and (max-width: 1600px){
+    .indexbtnIcon{
+        width: 60%;
+        height:40%;
+        margin: auto;
+    }
+}
+/*
+主页数量的图标
+*/
+.totalIcon{
+    width: 40px;
+    height: auto;
+    margin-right: 20px;
+}
+/*
+主页功能罪犯查询跳转按钮的图片
+*/
+.indexbtnMulIcon{
+    width: 33%;
+    height:50%;
+    left: 0px;
+}
+/*
+主页物联网控制跳转按钮的图片
+*/
+.indexbtnPyNetIcon{
+    width: 70%;
+    height:35%;
+    margin: 10% 0px 1% 0px ;
+}
+
+/*!*重写label的长度*!*/
+/*.layui-form-label{*/
+/*    padding-left: 5px;*/
+/*    width: 100px;*/
+/*}*/
+
+/*.layui-input-block{*/
+/*    margin-left:120px;*/
+/*}*/
+
+
+@media screen and (max-width: 450px){
+    .layui-form-item .layui-input-inline{
+        margin: 0 0 10px 122px;
+    }
+}
+
+/*菜单图标（图片）*/
+.menu-img{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left:18px;
+    margin-top: -10px;
+}

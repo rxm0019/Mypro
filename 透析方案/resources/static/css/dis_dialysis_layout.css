@@ -1,0 +1,665 @@
+/** 透析记录布局 - 头部查询 **/
+.dialysis-layout-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background-color: #FFFFFF;
+}
+.dialysis-layout-header .layui-card-header {
+	height: auto;
+}
+
+/** 透析记录布局 - 侧边栏 **/
+.dialysis-layout-side {
+	position: fixed;
+	top: 61px;
+	left: 10px;
+	width: 275px;
+	height: calc(100vh - 51px - 10px - 10px);
+	z-index: 998;
+	float: left;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+	background-color: #FFFFFF;
+}
+
+/** 透析记录布局 - 侧边栏患者列表头部查询 **/
+.dialysis-layout-side .patient-search {
+	width: 100%;
+	height: 45px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.dialysis-layout-side .patient-search .title-line {
+	width: 70px;
+	font-size: 16px;
+	margin: 0 10px;
+	font-weight: 600;
+	color: rgba(51, 171, 159, 1);
+	line-height: 45px;
+}
+.dialysis-layout-side .patient-search .select-inline {
+	width: 80px;
+	margin: 8px 8px 8px 0;
+}
+.dialysis-layout-side .patient-search .select-inline:last-child {
+	margin-right: 0;
+}
+.dialysis-layout-side .patient-search .select-inline .layui-select-title input {
+	border: none;
+	background: none;
+	text-align: right;
+	padding-left: 0;
+	padding-right: 20px;
+	color: #757575;
+}
+.dialysis-layout-side .patient-search .select-inline .layui-select-title .layui-edge {
+	right: 3px;
+}
+
+/** 透析记录布局 - 侧边栏患者列表 **/
+.dialysis-layout-side .patient-list {
+	width: 275px;
+	height: calc(100% - 46px);
+}
+.dialysis-layout-side .patient-list .dialysis-list-error {
+	text-align: center;
+	padding: 50px 10px;
+	color: #999;
+}
+.dialysis-layout-side .patient-list .layui-side-scroll {
+	width: 100%;
+	height: calc(100% - 30px);
+}
+
+/** 透析记录布局 - 患者下拉选项 **/
+.dialysis-dropdown-item {
+	font-size: 14px;
+	border-bottom: 1px solid #e6e6e6;
+	cursor: pointer;
+}
+.dialysis-dropdown-item:hover {
+	background-color: rgba(229, 241, 241, 0.5);
+}
+.dialysis-dropdown-item.selected {
+	background-color: rgba(229, 241, 241, 1);
+}
+.dialysis-dropdown-item .item-topping {
+	position: absolute;
+}
+.dialysis-dropdown-item .item-topping > label {
+	position: absolute;
+	color: #FFFFFF;
+	top: 2px;
+	left: 2px;
+	font-weight: bold;
+}
+.dialysis-dropdown-item .item-topping > div {
+	width: 0;
+	height: 0;
+	border-width: 0 0 35px 35px;
+	border-style: solid;
+	border-color: transparent transparent transparent #1E9FFF;
+}
+.dialysis-dropdown-item .item-new {
+	position: absolute;
+	right: 0;
+}
+.dialysis-dropdown-item .item-new > label {
+	display: inline-block;
+	color: #FFFFFF;
+	background: #01A89E;
+	font-size: 12px;
+	height: 17px;
+	line-height: 18px;
+	padding: 0 7px 0 7px;
+	border-bottom-left-radius: 8px;
+}
+.dialysis-dropdown-item .item-content {
+	padding: 18px 8px 10px 8px;
+}
+.dialysis-dropdown-item .patient-photo-box {
+	display: inline-block;
+	width: 45px;
+	vertical-align:middle
+}
+.dialysis-dropdown-item .patient-photo-box img {
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
+.dialysis-dropdown-item .patient-info-box {
+	display: inline-block;
+	width: 195px;
+	margin-left: 10px;
+	vertical-align:middle
+}
+.patient-info-row {
+	margin-top: 5px;
+}
+.patient-info-row:first-child {
+	margin-top: 0;
+}
+.dialysis-dropdown-item .patient-info-box label {
+	display: inline-block;
+	vertical-align: middle;
+}
+.dialysis-dropdown-item .patient-info-box .patient-name {
+	width: 95px;
+	text-align: left;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.dialysis-dropdown-item .patient-info-box .patient-record-no {
+	width: 100px;
+	text-align: right;
+}
+.dialysis-dropdown-item .patient-info-box .bed-no {
+	width: 80px;
+}
+.dialysis-dropdown-item .patient-info-box .patient-sex {
+	margin-left: 4px;
+}
+.dialysis-dropdown-item .patient-info-box .dialysis-mode {
+	width: 70px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: center;
+}
+.dialysis-dropdown-item .patient-info-box .patient-age {
+	width: 25px;
+	text-align: right;
+}
+.dialysis-dropdown-item .patient-info-box .patient-age span {
+	width: 22px;
+	height: 22px;
+	color: #FFFFFF;
+	background-color: #76C0BB;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	font-size: 12px;
+	line-height: 22px;
+}
+.dialysis-dropdown-item .patient-info-box .infection-status {
+	display: inline-block;
+	width: 155px;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.dialysis-dropdown-item .patient-info-box .infection-status label {
+	color: #FFFFFF;
+	background-color: rgb(251, 123, 123);
+	border-radius: 50px;
+	padding: 0 10px;
+	margin-right: 5px;
+}
+.dialysis-dropdown-item .patient-info-box .infection-status label:last-child {
+	margin-right: 0;
+}
+.dialysis-dropdown-item .patient-info-box .record-status {
+	color: #FFFFFF;
+	background-color: #FFB800;
+	border-radius: 50px;
+	padding: 0 6px;
+	text-align: right;
+}
+
+/** 透析记录布局 - 主内容 **/
+.dialysis-layout-body {
+	position: fixed;
+	top: 61px;
+	left: 295px;
+	right: 10px;
+	z-index: 998;
+}
+
+/** 透析记录布局 - 主内容 - 按钮功能 **/
+.dialysis-layout-body .dialysis-btns {
+	border-bottom: 1px solid #E5E5E5;
+	padding: 8px 20px 7px 0px;
+}
+.dialysis-layout-body .dialysis-btns a {
+	color: #546572;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	padding: 0 15px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+.dialysis-layout-body .dialysis-btns a label {
+	margin-left: 12px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.dialysis-layout-body .dialysis-btns a span {
+	font-size: 16px;
+	cursor: pointer;
+}
+.dialysis-layout-body .dialysis-btns a span.warning {
+	color: #FFB800;
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn {
+	background-repeat: no-repeat;
+	background-position: 0;
+	background-size: 23px;
+}
+.dialysis-layout-body .dialysis-btns a.disabled {
+	color: #999999;
+	cursor: not-allowed;
+}
+.dialysis-layout-body .dialysis-btns a.disabled label {
+	cursor: not-allowed;
+}
+.dialysis-layout-body .dialysis-btns a.disabled span {
+	cursor: not-allowed;
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-document-upload {
+	background-image: url("../images/icon-document-upload.png");
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-add-dialysis {
+	background-image: url("../images/icon-add-dialysis.png");
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-bed {
+	background-image: url("../images/icon-bed.png");
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-filed {
+	background-image: url("../images/icon-filed.png");
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-refresh {
+	background-image: url("../images/icon-refresh.png");
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-examine {
+	background-image: url("../images/icon-examine.png");
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-case {
+	background-image: url("../images/icon-case.png");
+}
+.dialysis-layout-body .dialysis-btns a.icon-btn.icon-history {
+	background-image: url("../images/icon-history.png");
+}
+
+/** 透析记录布局 - 主内容 - 透析简要信息 **/
+.dialysis-layout-body .dialysis-brief-info {
+	padding: 10px;
+}
+.dialysis-layout-body .dialysis-brief-info .patient-name {
+	line-height: 38px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	word-break: break-all;
+}
+.dialysis-layout-body .dialysis-brief-info .disui-form-flex>label {
+	flex: 0 0 110px;
+}
+.dialysis-layout-body .dialysis-brief-info .layui-btn {
+	margin-top: 3px;
+	margin-left: 10px;
+}
+
+/** 透析记录布局 - 主内容 - 页签 **/
+.dialysis-layout-body .patient-unselect {
+	height: calc(100% - 46px);
+	text-align: center;
+	color: #999;
+	line-height: 200px;
+	font-size: 16px;
+}
+.dialysis-layout-body .layui-tab-dis-sub .layui-tab-title li .layui-badge-dot {
+	top: -12px;
+}
+.dialysis-layout-body .layui-tab-dis-sub .layui-tab-content {
+	padding: 0;
+}
+.dialysis-layout-body .layui-tab-dis-sub iframe {
+	height: calc(100vh - 61px -  46px - 140px - 16px);
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: none;
+	width: 100%;
+}
+.dialysis-layout-body .layui-tab-dis-sub .layui-tab-content .patient-unsign {
+	height: calc(100vh - 61px -  46px - 140px - 10px);
+	text-align: center;
+	color: #999;
+	line-height: 200px;
+	font-size: 16px;
+}
+
+/** 今日就诊 - 头部查询 **/
+.dialysis-topping-header {
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background-color: #FFFFFF;
+}
+
+/** 今日就诊 - 主内容 - 就诊列表 **/
+.dialysis-topping-list .empty-list {
+	height: 300px;
+	line-height: 300px;
+	text-align: center;
+	font-size: 28px;
+	color: #CCCCCC;
+}
+@media screen and (min-width: 768px) {
+	.dialysis-topping-list .dialysis-topping-item-box {
+		width: 50%;
+	}
+}
+@media screen and (min-width: 1366px) {
+	.dialysis-topping-list .dialysis-topping-item-box {
+		width: 33.33333%;
+	}
+}
+
+/** 今日就诊 - 主内容 - 就诊患者 **/
+.dialysis-topping-item {
+	border: 1px solid #E4E4E4;
+	background-color: #FFFFFF;
+	border-radius: 6px;
+	position: relative;
+}
+.dialysis-topping-item .item-topping {
+	position: absolute;
+}
+.dialysis-topping-item .item-topping > label {
+	position: absolute;
+	color: #FFFFFF;
+	top: 5px;
+	left: 5px;
+	font-weight: bold;
+}
+.dialysis-topping-item .item-topping > div {
+	width: 0;
+	height: 0;
+	border-width: 0 0 40px 40px;
+	border-style: solid;
+	border-color: transparent transparent transparent #1E9FFF;
+}
+.dialysis-topping-item .item-new {
+	position: absolute;
+	right: 0;
+}
+.dialysis-topping-item .item-new > label {
+	display: inline-block;
+	color: #FFFFFF;
+	background: #01A89E;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 7px 0 7px;
+	border-bottom-left-radius: 8px;
+}
+.dialysis-topping-item .item-header {
+	padding: 10px;
+}
+.dialysis-topping-item .item-header .photo-box {
+	display: inline-block;
+	width: 80px;
+	vertical-align:middle
+}
+.dialysis-topping-item .item-header .photo-box img {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+}
+.dialysis-topping-item .item-header .info-box {
+	display: inline-block;
+	width: calc(100% - 80px);
+	vertical-align: middle
+}
+.dialysis-topping-item .item-header .info-box .clock {
+	margin: auto;
+	font-size: 24px;
+	color: #CCCCCC;
+	text-align: center;
+}
+.dialysis-topping-item.with-clock .item-header .info-box .clock {
+	font-size: 28px;
+	color: #199ED8;
+	font-weight: 600;
+}
+.dialysis-topping-item .item-header .info-box .info-row {
+	display: flex;
+	flex-wrap: wrap;
+	display: -webkit-flex;
+}
+.dialysis-topping-item .item-header .info-box .info-column {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	flex: 1;
+}
+.dialysis-topping-item .item-header .info-box .info-column > label {
+	width: 70px;
+	display: inline-block;
+	text-align: right;
+}
+.dialysis-topping-item .item-header .info-box .patient-tag {
+	border: 1px solid;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 12px;
+	margin-left: 5px;
+	display: inline-block;
+}
+.dialysis-topping-item .item-footer {
+	background-color: #FBFBFB;
+	border-top: 1px solid #EBEBEB;
+	padding: 15px 10px;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	border-radius: 0 0 6px 6px;
+}
+.dialysis-topping-item .item-footer .btn-box {
+	flex: 4;
+	text-align: center;
+}
+.dialysis-topping-item .item-footer .btn-more {
+	width: 50px;
+}
+.dialysis-topping-item .item-footer .btn-more .layui-icon {
+	margin-top: 5px;
+	font-size: 25px;
+	display: inline-block;
+}
+.dialysis-topping-item .item-footer .btn-more .layui-nav-item {
+	text-align: center;
+}
+.dialysis-topping-item .item-footer .btn-more .layui-nav-child {
+	top: auto;
+	min-width: 65px;
+	left: auto;
+	text-align: center;
+	line-height: 30px;
+}
+
+/** 班次Tab样式选项 **/
+.schedule-shift-options {
+	border-radius: 6px;
+}
+.schedule-shift-options .tab-item {
+	display: inline-block;
+	text-align: center;
+	height: 26px;
+	line-height: 26px;
+	background-color: #f4f4f4;
+	cursor: pointer;
+	padding: 0 15px;
+	margin: 0 0 5px 0;
+}
+.schedule-shift-options .tab-item:first-child {
+	border-radius: 5px 0 0 5px;
+}
+.schedule-shift-options .tab-item:last-child {
+	border-radius: 0 5px 5px 0;
+}
+.schedule-shift-options .tab-item:hover {
+	background-color: #d2d2d2;
+	color: #ffffff;
+}
+.schedule-shift-options .tab-item.selected {
+	background-color: #76C0BB;
+	color: #ffffff;
+}
+
+/***************今日医嘱 start*********** */
+/** 头部查询 **/
+.order-layout-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background-color: #FFFFFF;
+}
+.order-layout-header .layui-card-header {
+	height: auto;
+}
+
+/** 侧边栏 **/
+.patient-layout-side {
+	position: fixed;
+	top: 95px;
+	left: 10px;
+	width: 200px;
+	height: calc(100vh - 84px - 10px - 10px);
+	z-index: 998;
+	overflow-x: hidden;
+	float: left;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+	background-color: #FFFFFF;
+}
+
+/** 侧边栏患者列表头部查询 **/
+.patient-layout-side .patient-search {
+	width: 100%;
+	height: 45px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.patient-layout-side .patient-search .title-line {
+	width: 100%;
+	font-size: 16px;
+	margin: 0;
+	font-weight: 600;
+	color: rgba(51, 171, 159, 1);
+	line-height: 45px;
+	text-align: center;
+}
+/** 侧边栏患者列表 **/
+.patient-layout-side-list {
+	width: 200px;
+	height: calc(100% - 45px);
+	background-color: #FFFFFF;
+	z-index: 997;
+	position: absolute;
+	top: 45px;
+	bottom: 0;
+	/*max-height: 500px;*/
+}
+.patient-layout-side-list .patient-list-error {
+	text-align: center;
+	padding: 50px 10px;
+	color: #999;
+}
+.patient-layout-side-list .layui-side-scroll {
+	width: 100%;
+	height: calc(100% - 10px);
+}
+/** 患者下拉选项 **/
+.patient-dropdown-item {
+	padding: 10px 8px;
+	font-size: 14px;
+	border-bottom: 1px solid #e6e6e6;
+	cursor: pointer;
+}
+.patient-dropdown-item:hover {
+	background-color: rgba(229, 241, 241, 0.5);
+}
+.patient-dropdown-item.selected {
+	background-color: rgba(229, 241, 241, 1);
+}
+.patient-dropdown-item .patient-photo-box {
+	display: inline-block;
+	width: 45px;
+	vertical-align:middle
+}
+.patient-dropdown-item .patient-photo-box img {
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
+.patient-dropdown-item .patient-info-box {
+	display: inline-block;
+	width: 120px;
+	margin-left: 10px;
+	vertical-align:middle
+}
+.patient-info-row {
+	margin-top: 5px;
+}
+.patient-info-row:first-child {
+	margin-top: 0;
+}
+.patient-dropdown-item .patient-info-box label {
+	display: inline-block;
+	vertical-align: middle;
+}
+.patient-dropdown-item .patient-info-box .patient-name {
+	width: 64px;
+	text-align: left;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.patient-dropdown-item .patient-info-box .patient-record-no {
+	width: 80px;
+}
+.patient-dropdown-item .patient-info-box .patient-age {
+	width: 40px;
+	text-align: right;
+}
+.patient-dropdown-item .patient-info-box .patient-sex {
+	width: 16px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.patient-dropdown-item .patient-info-box .infection-status {
+	color: #FFFFFF;
+	background-color: #FFB800;
+	border-radius: 50px;
+	padding: 0 6px;
+	text-align: right;
+}
+
+.patient-dropdown-item .patient-infection-status {
+	margin-left:3px;
+	height: 15px;
+	line-height: 15px;
+	padding: 0 6px;
+	font-size: 12px;
+}
+.order-layui-body {
+	position: absolute;
+	top: 95px;
+	left: 10px;
+	width: calc(100% - 22px);
+	height: calc(100vh - 84px - 10px - 10px);
+	float: left;
+	overflow: auto;
+}
+/***************今日医嘱 end*****************/
+

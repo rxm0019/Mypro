@@ -1,0 +1,63 @@
+html, body, #LAY-user-login { height:100%; background-color: #FFFFFF; }
+
+#LAY-user-login,
+.layadmin-user-login-header { height: 115px; }
+.layadmin-user-login-header .logo { margin: 20px 0 0 195px; }
+.layadmin-user-login-body { height: calc(100vh - 115px - 64px); }
+.layadmin-user-login-carousel { width: 100%; height: calc(100% - 115px - 64px) !important; position: fixed; top: 115px; }
+.layadmin-user-login-carousel .layui-carousel-ind { top: -30px; }
+.layadmin-user-login-carousel .layui-carousel-ind ul { background-color: transparent !important; }
+.layadmin-user-login-carousel .layui-carousel-ind li { width: 30px; height: 5px; border-radius: 5px; margin: 0 15px 0 0; }
+.layadmin-user-login-carousel .layui-carousel-ind li:last-child { margin: 0; }
+.layadmin-user-login-carousel div[carousel-item] > div { background-repeat: no-repeat; background-size: cover; }
+.layadmin-user-login-box { width: 440px; padding: 49px 78px 87px 80px; float: right; right: 141px; top: 50%; position: relative; transform: translateY(-50%); border-radius: 20px; box-shadow: 1px 10px 30px 0px rgba(0, 0, 0, 0.28); background-color: #FFFFFF; }
+.layadmin-user-login-box .login-title { font-size: 38px; font-weight: bold; color: #546672; margin-bottom: 40px; }
+.layadmin-user-login-box .layui-form-item { position: relative; margin-bottom: 20px; }
+.layadmin-user-login-box .layui-form-item:last-child { margin-bottom: 0; }
+.layadmin-user-login-box .layui-form-item .layui-input { height: 54px; font-size: 16px; font-weight: 500; line-height: 54px; color: #343434; padding: 0 15px 0 21px; border: 1px solid #CCCCCC; box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.02); border-radius: 4px; background-color: #F7F7F7; }
+.layadmin-user-login-box .layui-form-item .layui-input::-webkit-input-placeholder { font-size: 16px; font-weight: 500; color: #BFBFBF; }
+.layadmin-user-login-box .layui-form-item .layui-input:-moz-placeholder { font-size: 16px; font-weight: 500; color: #BFBFBF; }
+.layadmin-user-login-box .layui-form-item .layui-input:-ms-input-placeholder { font-size: 16px; font-weight: 500; color: #BFBFBF; }
+.layadmin-user-login-box .layui-form-item .layui-input.with-icon { padding-left: 50px; }
+.layadmin-user-login-box .layui-form-item .layui-input.input-vercode { width: 220px; display: inline-block; }
+.layadmin-user-login-box .layui-form-item .vercode-img { width: 114px; height: 50px; margin: 1px 33px 3px 24px; }
+.layadmin-user-login-box .layui-form-item .vercode-switch { color: #666666; width: 48px; height: 54px; font-size: 16px; font-weight: 500; display: inline-block; line-height: 54px; text-align: center; }
+.layadmin-user-login-box .layui-form-item .layui-form-checkbox { margin-top: 0; }
+.layui-form-checkbox span { font-size: 16px; font-weight: 500; color: #666666; }
+.layadmin-user-login-box .layui-form-item .layui-form-checkbox:hover i { border-color: #76C0BC; }
+.layadmin-user-login-box .layui-form-item .layui-form-checked i, .layadmin-user-login-box .layui-form-item .layui-form-checked:hover i { border-color: #76C0BC; background-color: #76C0BC; }
+.layadmin-user-login-box .layui-form-item .layui-btn { background-color: #76C0BB; height: 54px; border-radius: 6px; font-size: 18px; margin-top: 40px; }
+.layadmin-user-login-icon { position: absolute; left: 15px; top: 17px; }
+.layadmin-user-login-icon img { width: 20px; height: 20px; }
+.layui-form-checked[lay-skin=primary] i, .layui-form-checked[lay-skin=primary]:hover i { border-color: #1B8295; background-color: #1B8295; color: #fff }
+.layui-form-checked[lay-skin=primary] span, .layui-form-checked[lay-skin=primary]:hover span { background-color: rgb(255,255,255); font-size: 16px; }
+.layui-form-checkbox[lay-skin=primary]:hover i { border-color:#1B8295; color: #fff }
+.layadmin-user-login-footer { height: 64px; text-align: center; font-size: 16px; font-weight: 400; color: #666666; }
+.layadmin-user-login-footer p { margin-top: 28px; display: inline-block; }
+
+@media screen and (max-width: 768px) {
+  #LAY-user-login,
+  .layadmin-user-login-header { height: 115px; }
+  .layadmin-user-login-header .logo { margin: 20px 0 0 20px; }
+  .layadmin-user-login-box { right: 0px; margin: 0 auto; float: none; }
+}
+
+@media screen and (max-width: 575px) {
+  #LAY-user-login,
+  .layadmin-user-login-header { height: 115px; }
+  .layadmin-user-login-header .logo { margin: 20px 0 0 20px; }
+  .layadmin-user-login-header h1 { font-size: 26px; padding: 37px 0 0 0; text-align: center }
+  .layadmin-user-login-body { height: calc(100vh - 115px - 65px); }
+  .layadmin-user-login-box { width: 275px; padding: 30px; right: 0px; margin: 0 auto; float: none; }
+  .layadmin-user-login-box h6 { font-size: 18px; margin-bottom: 20px; }
+  .layadmin-user-login-box .layui-form-item .layui-input { height: 38px; font-size: 14px; line-height: 38px; }
+  .layadmin-user-login-box .layui-form-item .layui-input.with-icon { padding-left: 45px; }
+  .layadmin-user-login-box .layui-form-item .layui-input.input-vercode { width: 120px; }
+  .layadmin-user-login-box .layui-form-item .vercode-img { width: 130px; height: 38px; margin: 0 10px; }
+  .layadmin-user-login-box .layui-form-item .vercode-switch { display: none; }
+  .layadmin-user-login-box .layui-form-item .layui-btn { height: 42px; font-size: 16px; margin-top: 15px; }
+  .layadmin-user-login-icon { width: 38px; line-height: 34px; font-size: 16px; top: 8px; }
+  .layadmin-user-login-icon img { width: 22px; height: 22px; }
+  .layui-form-checked[lay-skin=primary] span, .layui-form-checked[lay-skin=primary]:hover span { font-size: 14px; }
+  .layadmin-user-login-footer { height: 65px; line-height: 65px; text-align: center; font-size: 12px; }
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongster.dis.system.dao.ext.ExtSysDictDataMapper">
+  <resultMap id="sysDictDataMap" type="com.hongster.dis.common.model.system.ext.SysDictDataList">
+    <!-- 关联表字段映射在这里配置,比如<result column="XXXX数据库别名" property="user.id 对象.字段名"/>-->
+  </resultMap>
+  <sql id="sysDictDataColumns">
+    sdd_.id
+    ,sdd_.dict_id
+    ,sdd_.dict_data_name
+    ,sdd_.dict_data_short_name
+    ,sdd_.dict_data_value
+    ,sdd_.dict_biz_code
+    ,sdd_.dict_data_sort
+    ,sdd_.dict_data_desc
+    ,sdd_.create_by_
+    ,sdd_.create_time_
+    ,sdd_.update_by_
+    ,sdd_.update_time_
+    ,sdd_.data_status
+    ,sdd_.data_sync
+    ,sdd_.hospital_no
+  </sql>
+  <select id="list" resultMap="sysDictDataMap">
+    SELECT
+    <include refid="sysDictDataColumns"/>
+    FROM sys_dict_data sdd_
+    WHERE 1=1
+    <if test="dictId!= null and dictId!=''">
+    AND sdd_.dict_id = #{dictId}
+    </if>
+    <if test="dictDataName!= null and dictDataName!=''">
+    AND sdd_.dict_data_name = #{dictDataName}
+    </if>
+    <if test="dictDataShortName!= null and dictDataShortName!=''">
+    AND sdd_.dict_data_short_name = #{dictDataShortName}
+    </if>
+    <if test="dictDataValue!= null and dictDataValue!=''">
+    AND sdd_.dict_data_value = #{dictDataValue}
+    </if>
+    <if test="dictBizCode!= null and dictBizCode!=''">
+    AND sdd_.dict_biz_code = #{dictBizCode}
+    </if>
+    <if test="dictDataSort!= null and dictDataSort!=''">
+    AND sdd_.dict_data_sort = #{dictDataSort}
+    </if>
+    <if test="dictDataDesc!= null and dictDataDesc!=''">
+    AND sdd_.dict_data_desc = #{dictDataDesc}
+    </if>
+    <if test="createBy!= null and createBy!=''">
+    AND sdd_.create_by_ = #{createBy}
+    </if>
+    <if test="createTime!= null">
+    AND sdd_.create_time_ = #{createTime}
+    </if>
+    <if test="updateBy!= null and updateBy!=''">
+    AND sdd_.update_by_ = #{updateBy}
+    </if>
+    <if test="updateTime!= null">
+    AND sdd_.update_time_ = #{updateTime}
+    </if>
+    <if test="dataStatus!= null and dataStatus!=''">
+    AND sdd_.data_status = #{dataStatus}
+    </if>
+    <if test="dataSync!= null and dataSync!=''">
+    AND sdd_.data_sync = #{dataSync}
+    </if>
+    <if test="hospitalNo!= null and hospitalNo!=''">
+    AND sdd_.hospital_no = #{hospitalNo}
+    </if>
+    <choose>
+      <when test="page!=null and page.orderBy!= null and page.orderBy!= ''">
+        ORDER BY ${page.orderBy}
+      </when>
+    </choose>
+  </select>
+</mapper>

@@ -1,0 +1,32 @@
+ <div class="layui-col-sm8 layui-col-md8 layui-col-lg8" style="padding: 10px;" ms-if="isShow">
+                <div class="layui-form" lay-filter="bacContentTemplateEdit_submit" id="bacContentTemplateEdit_submit">
+                    <div class="layui-row layui-col-space1">
+                        <label class="layui-form-label" style="width: 120px;"><span
+                                    class="edit-verify-span">*</span>已选择模板</label>
+                    </div>
+                    <div class="layui-row layui-col-space1">
+                        <div class="layui-col-sm10 layui-col-md10 layui-col-lg10">
+                            <div class="disui-form-flex">
+                                <label class="layui-form-label">模板名称：</label>
+                                <input type="text" name="templateTitle"
+                                       id="templateTitle"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space1">
+                        <div class="layui-col-sm10 layui-col-md10 layui-col-lg10">
+                            <div class="disui-form-flex">
+                                <label class="layui-form-label">模板内容：</label>
+                                <textarea type="text" name="templateContent" maxlength="65535"
+                                          placeholder="请输入" autocomplete="off" class="layui-input">
+                            </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 隐藏的提交按钮，必须要，用于验证表单，触发提交表单的作用-->
+                    <div class="layui-form-item layui-hide">
+                        <button class="layui-btn" lay-submit lay-filter="bacContentTemplateEdit_submit" id="bacContentTemplateEdit_submit">提交</button>
+                    </div>
+                </div>
+            </div>
